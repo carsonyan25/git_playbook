@@ -1,5 +1,5 @@
 ---
-  - hosts: www.pcw365.com
+  - hosts: all
     gather_facts: no
     vars:
       MobileAPI2: /home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI2  
