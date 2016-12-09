@@ -2,18 +2,18 @@
   - hosts: all
     gather_facts: no
     vars:
-      MobileAPI2: "/home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI2" 
-      MobileAPI: "/home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI"
-      operation: "rollback" 
-      git_script: "/app/ansible-jobs/scripts/public/git_management.py" 
+    - MobileAPI2: "/home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI2" 
+    - MobileAPI: "/home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI"
+    - operation: "rollback" 
+    - git_script: "/app/ansible-jobs/scripts/public/git_management.py" 
 
     tasks:
     - name: Git reset on MobileAPI2
-      script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI2 }} "  " {{ head }}"
+      script: /app/ansible-jobs/scripts/public/git_management.py  "{{ operation }}"  "{{ MobileAPI2 }}"  "{{ head }}"
       tags: git reset MobileAPI2
 
     - name: Git reset on MobileAPI
-      script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI }} "  " {{ head }}"
+      script: /app/ansible-jobs/scripts/public/git_management.py  "{{ operation }}"  "{{ MobileAPI }}"  "{{ head }}"
       tags: git reset MobileAPI
 
 ...
