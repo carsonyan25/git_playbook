@@ -10,10 +10,10 @@
     tasks:
     - name: Git pull on MobileAPI2
       script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI2 }} "
-      tags: pull MobileAPI2
+      tags: git pull MobileAPI2
 
     - name: Git pull on MobileAPI
       script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI }} "
-      tags: pull MobileAPI
+      tags: git pull MobileAPI
 
 ...

@@ -10,10 +10,10 @@
     tasks:
     - name: Git reset on MobileAPI2
       script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI2 }} "  " {{ head } }"
-      tags: git  reset MobileAPI2
+      tags: git reset MobileAPI2
 
     - name: Git reset on MobileAPI
       script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI }} "  " {{ head } }"
-      tags: git  reset MobileAPI
+      tags: git reset MobileAPI
 
 ...
