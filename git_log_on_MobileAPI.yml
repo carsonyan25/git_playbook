@@ -9,11 +9,11 @@
 
     tasks:
     - name: Git log on MobileAPI2
-      script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI2 }} "
+      script: /app/ansible-jobs/scripts/public/git_management.py  "{{operation}}"  "{{MobileAPI2}}"
       tags: git log MobileAPI2
 
     - name: Git log on MobileAPI
-      script: /app/ansible-jobs/scripts/public/git_management.py  " {{ operation }}"  " {{ MobileAPI }} "
+      script: /app/ansible-jobs/scripts/public/git_management.py  get_log  /home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI
       tags: git log MobileAPI
 
 ...
