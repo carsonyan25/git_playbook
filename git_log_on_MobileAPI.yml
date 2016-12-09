@@ -2,18 +2,18 @@
   - hosts: all
     gather_facts: no
     vars:
-      MobileAPI2: /home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI2  
-      MobileAPI: /home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI
-      operation: get_log 
-      git_script: /app/ansible-jobs/scripts/public/git_management.py 
+    - MobileAPI2: "/home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI2"  
+    - MobileAPI: "/home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI"
+    - operation: "get_log" 
+    - git_script: "/app/ansible-jobs/scripts/public/git_management.py" 
 
     tasks:
     - name: Git log on MobileAPI2
-      script: /app/ansible-jobs/scripts/public/git_management.py  "{{operation}}"  "{{MobileAPI2}}"
+      script: "{{ git_script }}"  "{{ operation }}"  "{{ MobileAPI2 }}"
       tags: git log MobileAPI2
 
     - name: Git log on MobileAPI
-      script: /app/ansible-jobs/scripts/public/git_management.py  get_log  /home/server/apache2/htdocs/ecshop/ecshop2/MobileAPI
+      script: /app/ansible-jobs/scripts/public/git_management.py  get_log  "{{MobileAPI}}"
       tags: git log MobileAPI
 
 ...
