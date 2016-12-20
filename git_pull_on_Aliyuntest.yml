@@ -1,0 +1,14 @@
+---
+  - hosts: alitest.pcw365.com
+    gather_facts: no
+    vars:
+      download: "/var/www/html/download"
+      operation: "pull"  
+      git_script: "/app/ansible-jobs/scripts/public/git_management.py" 
+
+    tasks:
+    - name: git pull on download
+      script: /app/ansible-jobs/scripts/public/git_management.py  "{{ operation }}"  "{{ download }}"
+      tags: git pull on download
+
+...
